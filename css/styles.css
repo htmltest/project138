@@ -1,0 +1,164 @@
+*,
+*::before,
+*::after {outline:none; box-sizing:border-box}
+
+html {min-width:411px; height:100%}
+
+body {min-width:411px; height:100%; margin:0; padding:0; font:300 26px/44px Roboto, sans-serif; color:#000; background:#fff; -webkit-text-size-adjust:100%; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+
+@media screen and (max-width:1179px) {
+    body {font-size:19px; line-height:32px}
+}
+
+a {color:#e100b0; text-decoration:none}
+a:hover {text-decoration:underline}
+
+.wrapper {width:100%; min-width:411px; min-height:600px; height:100%; position:relative; overflow:hidden}
+
+@media screen and (max-width:1179px) {
+    .wrapper {min-height:823px}
+}
+
+.container {width:1840px; height:861px; position:absolute; left:50%; top:50%; margin:-430px 0 0 -920px}
+.container::before {content:""; display:block; background:url(../images/bg.png) no-repeat; background-size:100% 100%; position:fixed; left:40px; top:40px; right:40px; bottom:40px; transition:all 1.5s 1.25s; transform:scale(1.2); border-radius:12px; box-shadow:0px 4px 40px rgba(196, 199, 223, 0.4)}
+.animate .container::before {transform:none}
+.container::after {content:""; display:block; position:fixed; left:50%; margin-left:119px; top:40px; width:471px; bottom:40px; background:url(../images/bg-right.png) no-repeat; background-size:100%; transition:all 1.5s 1.25s; opacity:0}
+.animate .container::after {opacity:1}
+
+@media screen and (max-width:1179px) {
+    .container {width:371px; height:783px; background:url(../images/bg-mobile.png) no-repeat; margin:-392px 0 0 -186px}
+    .container::before {display:none}
+    .container::after {display:none}
+}
+
+.content {width:1180px; margin:0 auto; position:relative; padding:36px 0 0 0; z-index:1; top:50%; transform:translateY(-50%)}
+
+@media screen and (max-width:1179px) {
+    .content {width:311px; padding:0; position:static; top:0; transform:none}
+}
+
+header {border-bottom:3px solid #fff; padding:44px 0 33px 0}
+header::after {content:""; display:block; clear:both}
+
+@media screen and (max-width:1179px) {
+    header {padding:22px 0 20px 0}
+
+}
+
+.logo {float:left; width:104px; height:37px; background:url(../images/logo.png) no-repeat}
+.title {float:left; margin:0 0 0 39px; font:20px/37px "Anonymous Pro", sans-serif; color:#737895}
+.header-contacts {float:right; width:471px; text-align:center; font-size:18px; color:#101010; line-height:37px}
+.header-contacts a {font-weight:normal}
+
+@media screen and (max-width:1179px) {
+    .logo {width:68px; height:24px; background:url(../images/logo-mobile.png) no-repeat}
+    .title {float:right; margin:0; font-size:14px; line-height:24px}
+    .header-contacts {float:none; width:auto; font-size:20px; line-height:34px; color:#6b6b6b; position:absolute; left:30px; bottom:40px; text-align:left}
+    .header-contacts span {display:block}
+    .header-contacts a {color:#000}
+}
+
+.info {margin:142px 0 0 0}
+.info::after {content:""; display:block; clear:both}
+.info-main {float:left; width:600px}
+.info-main-header {font:26px/28px "Anonymous Pro", sans-serif; color:#e100b0; letter-spacing:0.05em; text-transform:uppercase; opacity:0; transform:translateY(-40px); transition:all 0.5s 0.5s}
+.animate .info-main-header {opacity:1; transform:translateY(0)}
+.info-main-header-dots {display:inline-block; vertical-align:middle; width:9px; height:9px; position:relative; margin:-2px 0 0 4px}
+.info-main-header-dot {display:block; position:absolute; width:9px; height:9px; border:3px solid #e100b0; top:0; border-radius:50%}
+.info-main-header-dot:nth-child(1) {left:0; animation:info-dots-animation1 3s linear infinite}
+.info-main-header-dot:nth-child(2) {left:13px; animation:info-dots-animation2 3s linear infinite}
+.info-main-header-dot:nth-child(3) {left:26px; animation:info-dots-animation3 3s linear infinite}
+.info-main-header-dot:nth-child(4) {left:-13px; opacity:0; animation:info-dots-animation4 3s linear infinite}
+.info-main-header-dot:nth-child(5) {left:-26px; opacity:0; animation:info-dots-animation5 3s linear infinite}
+.info-main-header-dot:nth-child(6) {left:-39px; opacity:0; animation:info-dots-animation6 3s linear infinite}
+.info-main-title {font:bold 72px/77px "Anonymous Pro", sans-serif; margin:36px 0 0 0; transform:translateX(-140px); transition:all 0.5s}
+.animate .info-main-title {transform:translateX(0)}
+.info-main-title span {white-space:nowrap}
+.info-main-text {margin:34px 0 0 0; opacity:0; transform:translateY(40px); transition:all 0.5s 0.5s}
+.animate .info-main-text {opacity:1; transform:translateY(0)}
+.info-side {float:right; margin:29px 60px 0 0; width:313px; font-size:20px; line-height:34px; color:#0a102b; opacity:0.8; opacity:0; transform:translateY(40px); transition:all 0.5s 0.75s}
+.animate .info-side {opacity:1; transform:translateY(0)}
+.info-slider-wrap {display:none}
+
+@keyframes info-dots-animation1 {
+    0% {left:0; opacity:1}
+    16.66% {left:13px; opacity:1}
+    33.33% {left:26px; opacity:1}
+    50% {left:39px; opacity:0}
+    66.66% {left:-26px; opacity:0}
+    83.33% {left:-13px; opacity:0}
+    100% {left:0; opacity:1}
+}
+
+@keyframes info-dots-animation2 {
+    0% {left:13px; opacity:1}
+    16.66% {left:26px; opacity:1}
+    33.33% {left:39px; opacity:0}
+    50% {left:-26px; opacity:0}
+    66.66% {left:-13px; opacity:0}
+    83.33% {left:0; opacity:1}
+    100% {left:13px; opacity:1}
+}
+
+@keyframes info-dots-animation3 {
+    0% {left:26px; opacity:1}
+    16.66% {left:39px; opacity:0}
+    33.33% {left:-26px; opacity:0}
+    50% {left:-13px; opacity:0}
+    66.66% {left:0; opacity:1}
+    83.33% {left:13px; opacity:1}
+    100% {left:26px; opacity:1}
+}
+
+@keyframes info-dots-animation4 {
+    0% {left:-13px; opacity:0}
+    16.66% {left:0; opacity:1}
+    33.33% {left:13px; opacity:1}
+    50% {left:26px; opacity:1}
+    66.66% {left:39px; opacity:0}
+    83.33% {left:-26px; opacity:0}
+    100% {left:-13px; opacity:0}
+}
+
+@keyframes info-dots-animation5 {
+    0% {left:-26px; opacity:0}
+    16.66% {left:-13px; opacity:0}
+    33.33% {left:0; opacity:1}
+    50% {left:13px; opacity:1}
+    66.66% {left:26px; opacity:1}
+    83.33% {left:39px; opacity:0}
+    100% {left:-26px; opacity:0}
+}
+
+@keyframes info-dots-animation6 {
+    0% {left:-39px; opacity:0}
+    16.66% {left:-26px; opacity:0}
+    33.33% {left:-13px; opacity:0}
+    50% {left:0; opacity:1}
+    66.66% {left:13px; opacity:1}
+    83.33% {left:26px; opacity:1}
+    100% {left:39px; opacity:0}
+}
+
+@media screen and (max-height:700px) {
+    .info {margin:46px 0 0 0}
+}
+
+@media screen and (max-width:1179px) {
+    .info {margin:46px 0 0 0}
+    .info-main {float:none; width:auto}
+    .info-main-header {font-size:20px; line-height:21px}
+    .info-main-header-dots {width:10px; height:10px}
+    .info-main-header-dot {width:10px; height:10px; border-width:2px}
+    .info-main-title {font-size:50px; line-height:53px; margin:20px 0 0 0}
+    .info-main-text {display:none}
+    .info-side {display:none}
+    .info-slider-wrap {display:block}
+    .info-slider {font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; position:relative; overflow:hidden; margin:21px 0 0 0}
+    .info-slider-item {display:inline-block; vertical-align:top; width:100%; font-size:19px; line-height:32px; letter-spacing:0; white-space:normal}
+    .info-slider .slick-dots {margin:30px 0 0 0; padding:0; list-style:none}
+    .info-slider .slick-dots li {margin:0 0 0 15px; padding:0; display:inline-block; vertical-align:top; position:relative}
+    .info-slider .slick-dots li:first-child {margin:0}
+    .info-slider .slick-dots li button {display:block; position:relative; width:15px; height:15px; border-radius:50%; border:3px solid #e100b0; background:transparent; margin:0; padding:0; outline:none; -webkit-appearance:none; cursor:pointer; font-size:0; line-height:0; text-indent:100px}
+    .info-slider .slick-dots li.slick-active button {background:#e100b0}
+}
