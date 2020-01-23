@@ -2,9 +2,9 @@
 *::before,
 *::after {outline:none; box-sizing:border-box}
 
-html {min-width:411px; height:100%}
+html {min-width:411px}
 
-body {min-width:411px; height:100%; margin:0; padding:0; font:300 26px/44px Roboto, sans-serif; color:#000; background:#fff; -webkit-text-size-adjust:100%; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+body {min-width:411px; margin:0; padding:0; font:300 26px/44px Roboto, sans-serif; color:#000; background:#fff; -webkit-text-size-adjust:100%; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
 
 @media screen and (max-width:1179px) {
     body {font-size:19px; line-height:32px}
@@ -13,54 +13,44 @@ body {min-width:411px; height:100%; margin:0; padding:0; font:300 26px/44px Robo
 a {color:#e100b0; text-decoration:none}
 a:hover {text-decoration:underline}
 
-.wrapper {width:100%; min-width:411px; min-height:600px; height:100%; position:relative; overflow:hidden}
+.wrapper {width:100%; min-width:411px; position:relative; overflow:hidden; padding}
 
-@media screen and (max-width:1179px) {
-    .wrapper {min-height:823px}
+.container {padding:80px}
+.container-wrap {background:url(../images/bg.png) center; background-size:cover; border-radius:12px; box-shadow:0px 4px 40px rgba(196, 199, 223, 0.4)}
+
+@media screen and (max-width:1479px) {
+    .container {padding:20px}
 }
 
-.container {width:1840px; height:861px; position:absolute; left:50%; top:50%; margin:-430px 0 0 -920px}
-.container::before {content:""; display:block; background:url(../images/bg.png) no-repeat; background-size:100% 100%; position:fixed; left:40px; top:40px; right:40px; bottom:40px; transition:all 1.5s 1.25s; transform:scale(1.2); border-radius:12px; box-shadow:0px 4px 40px rgba(196, 199, 223, 0.4)}
-.animate .container::before {transform:none}
-.container::after {content:""; display:block; position:fixed; left:50%; margin-left:119px; top:40px; width:471px; bottom:40px; background:url(../images/bg-right.png) no-repeat; background-size:100%; transition:all 1.5s 1.25s; opacity:0}
-.animate .container::after {opacity:1}
+.content {max-width:1320px; margin:0 auto; position:relative; padding:0 0 80px 0}
 
-@media screen and (max-width:1179px) {
-    .container {width:371px; height:783px; background:url(../images/bg-mobile.png) no-repeat; margin:-392px 0 0 -186px}
-    .container::before {display:none}
-    .container::after {display:none}
+@media screen and (max-width:1479px) {
+    .content {padding-left:30px; padding-right:30px}
 }
 
-.content {width:1180px; margin:0 auto; position:relative; padding:36px 0 0 0; z-index:1; top:50%; transform:translateY(-50%)}
-
-@media screen and (max-width:1179px) {
-    .content {width:311px; padding:0; position:static; top:0; transform:none}
-}
-
-header {border-bottom:3px solid #fff; padding:44px 0 33px 0}
+header {border-bottom:3px solid #fff; padding:44px 0 33px 0; background:url(../images/bg-right.png) no-repeat right top}
 header::after {content:""; display:block; clear:both}
 
 @media screen and (max-width:1179px) {
-    header {padding:22px 0 20px 0}
-
+    header {background:none; padding:22px 0 20px 0}
 }
 
 .logo {float:left; width:104px; height:37px; background:url(../images/logo.png) no-repeat}
 .title {float:left; margin:0 0 0 39px; font:20px/37px "Anonymous Pro", sans-serif; color:#737895}
+.lang {display:inline}
 .header-contacts {float:right; width:471px; text-align:center; font-size:18px; color:#101010; line-height:37px}
 .header-contacts a {font-weight:normal}
 
 @media screen and (max-width:1179px) {
     .logo {width:68px; height:24px; background:url(../images/logo-mobile.png) no-repeat}
     .title {float:right; margin:0; font-size:14px; line-height:24px}
-    .header-contacts {float:none; width:auto; font-size:20px; line-height:34px; color:#6b6b6b; position:absolute; left:30px; bottom:40px; text-align:left}
+    .header-contacts {display:none}
     .header-contacts span {display:block}
     .header-contacts a {color:#000}
 }
 
-.info {margin:142px 0 0 0}
-.info::after {content:""; display:block; clear:both}
-.info-main {float:left; width:600px}
+.info {display:table; width:100%; border-bottom:1px solid rgba(255, 0, 176, 0.6); background:url(../images/bg-right.png) repeat-y right top}
+.info-main {display:table-cell; vertical-align:middle; height:450px}
 .info-main-header {font:26px/28px "Anonymous Pro", sans-serif; color:#e100b0; letter-spacing:0.05em; text-transform:uppercase; opacity:0; transform:translateY(-40px); transition:all 0.5s 0.5s}
 .animate .info-main-header {opacity:1; transform:translateY(0)}
 .info-main-header-dots {display:inline-block; vertical-align:middle; width:9px; height:9px; position:relative; margin:-2px 0 0 4px}
@@ -71,14 +61,15 @@ header::after {content:""; display:block; clear:both}
 .info-main-header-dot:nth-child(4) {left:-13px; opacity:0; animation:info-dots-animation4 3s linear infinite}
 .info-main-header-dot:nth-child(5) {left:-26px; opacity:0; animation:info-dots-animation5 3s linear infinite}
 .info-main-header-dot:nth-child(6) {left:-39px; opacity:0; animation:info-dots-animation6 3s linear infinite}
-.info-main-title {font:bold 72px/77px "Anonymous Pro", sans-serif; margin:36px 0 0 0; transform:translateX(-140px); transition:all 0.5s}
+.info-main-title {font:bold 72px/77px "Anonymous Pro", sans-serif; margin:36px 0 0 0; transform:translateX(-140px); transition:all 0.5s; max-width:600px}
 .animate .info-main-title {transform:translateX(0)}
 .info-main-title span {white-space:nowrap}
-.info-main-text {margin:34px 0 0 0; opacity:0; transform:translateY(40px); transition:all 0.5s 0.5s}
+.info-main-text {margin:34px 0 0 0; opacity:0; transform:translateY(40px); transition:all 0.5s 0.5s; max-width:563px}
 .animate .info-main-text {opacity:1; transform:translateY(0)}
-.info-side {float:right; margin:29px 60px 0 0; width:313px; font-size:20px; line-height:34px; color:#0a102b; opacity:0.8; opacity:0; transform:translateY(40px); transition:all 0.5s 0.75s}
+.info-side {display:table-cell; vertical-align:middle; width:471px; font-size:20px; line-height:34px; color:#0a102b; opacity:0.8; opacity:0; transform:translateY(40px); transition:all 0.5s 0.75s; padding:0 60px 0 98px}
 .animate .info-side {opacity:1; transform:translateY(0)}
 .info-slider-wrap {display:none}
+.info-contacts {display:none}
 
 @keyframes info-dots-animation1 {
     0% {left:0; opacity:1}
@@ -140,13 +131,9 @@ header::after {content:""; display:block; clear:both}
     100% {left:39px; opacity:0}
 }
 
-@media screen and (max-height:700px) {
-    .info {margin:46px 0 0 0}
-}
-
 @media screen and (max-width:1179px) {
-    .info {margin:46px 0 0 0}
-    .info-main {float:none; width:auto}
+    .info {margin:46px 0 0 0; display:block; width:auto; background:none}
+    .info-main {display:block; height:auto}
     .info-main-header {font-size:20px; line-height:21px}
     .info-main-header-dots {width:10px; height:10px}
     .info-main-header-dot {width:10px; height:10px; border-width:2px}
@@ -161,4 +148,71 @@ header::after {content:""; display:block; clear:both}
     .info-slider .slick-dots li:first-child {margin:0}
     .info-slider .slick-dots li button {display:block; position:relative; width:15px; height:15px; border-radius:50%; border:3px solid #e100b0; background:transparent; margin:0; padding:0; outline:none; -webkit-appearance:none; cursor:pointer; font-size:0; line-height:0; text-indent:100px}
     .info-slider .slick-dots li.slick-active button {background:#e100b0}
+    .info-contacts {display:block; margin:43px 0 0 0; font-size:20px; line-height:34px; color:#6b6b6b; padding:0 0 53px 0}
+    .info-contacts a {color:#000; font-weight:normal}
+}
+
+.form {margin:60px 0}
+.form form {margin:0; padding:0}
+.form-title {font:bold 54px/58px "Anonymous Pro", sans-serif}
+.form-text {max-width:640px; margin:8px 0 0 0}
+.form-content {margin:47px -10px 0 -10px; position:relative; padding:0 0 47px 0}
+.form-content::after {content:""; display:block; clear:both}
+.form-field {float:left; width:25%; padding:0 10px}
+.form-policy {position:absolute; left:10px; bottom:0}
+
+@media screen and (max-width:1179px) {
+    .form {margin:56px 0 0 0}
+    .form-title {font-size:34px; line-height:36px}
+    .form-text {margin:25px 0 0 0}
+    .form-content {margin:29px 0 0 0; padding:0}
+    .form-field {float:none; width:auto; padding:0; margin:16px 0 0 0}
+    .form-policy {position:relative; left:auto; bottom:auto; margin:24px 0 39px 0}
+}
+
+.btn {display:block; margin:0; padding:0; overflow:visible; outline:none; vertical-align:top; width:100%; height:62px; text-decoration:none; background:#e100b0; color:#fff; border:none; border-radius:1px; font:20px/62px Roboto, sans-serif; letter-spacing:0; text-align:center; transition:all 0.2s; position:relative; -webkit-appearance:none; cursor:pointer}
+.btn:hover {background:rgba(255, 0, 176, 0.6)}
+
+@media screen and (max-width:1179px) {
+    .btn {height:50px; border-radius:5px; line-height:50px}
+}
+
+.form-input input {vertical-align:top; box-sizing:border-box; margin:0; padding:0 22px; outline:none; width:100%; height:62px; border:1px solid #fff; -webkit-appearance:none; color:#000; font:20px/60px Roboto, sans-serif; border-radius:1px}
+.form-input input.error {border-color:#f00}
+.form-input input::-webkit-input-placeholder {color:rgba(0, 0, 0, 0.6); opacity:1}
+.form-input input::-moz-placeholder {color:rgba(0, 0, 0, 0.6); opacity:1}
+.form-input input:-ms-input-placeholder {color:rgba(0, 0, 0, 0.6); opacity:1}
+.form-input label.error {display:none !important}
+
+@media screen and (max-width:1179px) {
+    .form-input input {height:50px; line-height:48px; padding:0 18px}
+}
+
+@-webkit-keyframes autofill {to {color:#000; background:#fff}}
+.form-input input:-webkit-autofill {-webkit-animation-name:autofill; -webkit-animation-fill-mode:both}
+
+.form-checkbox {font-size:18px; line-height:27px}
+.form-checkbox::after {content:""; display:block; clear:both}
+.form-checkbox label {float:left; display:block; cursor:pointer; position:relative}
+.form-checkbox input {display:none}
+.form-checkbox span {display:block; position:relative; padding:0 0 0 38px}
+.form-checkbox span::before {content:""; display:block; width:20px; height:20px; border:1px solid #e100b0; position:absolute; left:0; top:3px; background:url(../images/checkbox.svg) no-repeat -999px -999px}
+.form-checkbox input.error+span::before,
+.form-checkbox input.error+label.error+span::before {border-color:#f00}
+.form-checkbox input:checked+span::before,
+.form-checkbox input:checked+label.error+span::before {background-position:center}
+.form-checkbox label.error {position:absolute; left:100%; top:0; white-space:nowrap; margin-left:20px; color:#f00}
+
+@media screen and (max-width:1179px) {
+    .form-checkbox label.error {left:0; top:100%; right:0; white-space:normal; margin-left:0}
+}
+
+.success {margin:80px 0 0 0; display:none}
+.success-inner {display:inline-block; vertical-align:top; border:1px solid rgba(0, 0, 0, 0.14); height:154px; padding:0 92px 0 146px; position:relative; line-height:152px}
+.success-inner::before {content:""; display:block; width:80px; height:80px; position:absolute; left:39px; top:50%; margin-top:-40px; background:url(../images/success.svg) no-repeat}
+
+@media screen and (max-width:1179px) {
+    .success {margin:60px 0 0 0}
+    .success-inner {line-height:32px; padding:22px 15px 24px 92px; height:auto}
+    .success-inner::before {width:51px; height:51px; left:20px; margin-top:-26px; background-size:100%}
 }

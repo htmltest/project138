@@ -9,6 +9,26 @@ $(document).ready(function() {
         adaptiveHeight: true
     });
 
+    $('form').validate({
+        ignore: '',
+        submitHandler: function(form) {
+            var formData = new FormData(form);
+
+            $.ajax({
+                type: 'POST',
+                url: $(form).attr('action'),
+                processData: false,
+                contentType: false,
+                dataType: 'html',
+                data: formData,
+                cache: false
+            });
+
+            $('.form').hide();
+            $('.success').show();
+        }
+    });
+
 });
 
 $(window).on('load', function() {
